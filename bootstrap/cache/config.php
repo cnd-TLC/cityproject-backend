@@ -195,7 +195,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -254,10 +254,11 @@
     ),
     'allowed_origins' => 
     array (
-      0 => '*',
+      0 => 'localhost:5173',
     ),
     'allowed_origins_patterns' => 
     array (
+      0 => '*localhost*',
     ),
     'allowed_headers' => 
     array (
@@ -267,7 +268,7 @@
     array (
     ),
     'max_age' => 0,
-    'supports_credentials' => false,
+    'supports_credentials' => true,
   ),
   'database' => 
   array (
@@ -368,13 +369,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\app',
+        'root' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\app/public',
+        'root' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -394,7 +395,7 @@
     ),
     'links' => 
     array (
-      'C:\\Users\\dizac\\Desktop\\city-project-backend\\public\\storage' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\app/public',
+      'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\public\\storage' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -433,13 +434,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -491,7 +492,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -557,7 +558,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -619,12 +620,7 @@
   array (
     'stateful' => 
     array (
-      0 => 'localhost',
-      1 => 'localhost:3000',
-      2 => '127.0.0.1',
-      3 => '127.0.0.1:8000',
-      4 => '::1',
-      5 => 'localhost',
+      0 => 'http://127.0.0.1:8000',
     ),
     'guard' => 
     array (
@@ -664,7 +660,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -675,7 +671,7 @@
     ),
     'cookie' => 'laravel_session',
     'path' => '/',
-    'domain' => NULL,
+    'domain' => 'http://127.0.0.1:8000',
     'secure' => NULL,
     'http_only' => true,
     'same_site' => 'lax',
@@ -684,9 +680,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\resources\\views',
+      0 => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\dizac\\Desktop\\city-project-backend\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -761,7 +757,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'C:\\Users\\dizac\\Desktop\\city-project-backend',
+    'remote_sites_path' => 'C:\\Users\\dizac\\Desktop\\city_project\\city-project-backend',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

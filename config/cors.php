@@ -19,9 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // SET FRONT-END ORIGIN
+    'allowed_origins' => ['localhost:5173'],
 
-    'allowed_origins_patterns' => [],
+    // TEMPORARY DURING DEV
+    'allowed_origins_patterns' => ['*localhost*'],
 
     'allowed_headers' => ['*'],
 
@@ -29,6 +31,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];

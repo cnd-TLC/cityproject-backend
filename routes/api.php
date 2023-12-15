@@ -7,7 +7,9 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProcurementController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +28,12 @@ use App\Http\Controllers\LoginController;
 
 
 // LOGIN
-Route::post('login', [LoginController::class, 'index']);
+Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function(){
+    // LOGOUT
+    Route::post('logout', [AuthController::class, 'logout']);
+
     // USERS
     Route::get('users', [AccountsManagementController::class, 'index']);
     Route::get('users/{id}', [AccountsManagementController::class, 'specificUser']);
@@ -78,4 +83,24 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::put('update_permission/{id}', [PermissionController::class, 'update']);
 
     Route::delete('remove_permission/{id}', [PermissionController::class, 'destroy']);
+
+    // PROCUREMENT
+    Route::get('purchase_request', [ProcurementController::class, 'index']);
+    Route::get('purchase_request/{id}', [ProcurementController::class, 'specificPR']);
+
+    Route::post('submit_purchase_request', [ProcurementController::class, 'store']);
+
+    Route::put('update_purchase_request/{id}', [ProcurementController::class, 'update']);
+
+    Route::delete('remove_purchase_request/{id}', [ProcurementController::class, 'destroy']);
+
+    // ITEMS
+    Route::get('inventory', [InventoryController::class, 'index']);
+    Route::get('inventory/{id}', [InventoryController::class, 'specificItem']);
+
+    Route::post('add_item', [InventoryController::class, 'store']);
+
+    Route::put('update_item/{id}', [InventoryController::class, 'update']);
+
+    Route::delete('remove_item/{id}', [InventoryController::class, 'destroy']);
 });
