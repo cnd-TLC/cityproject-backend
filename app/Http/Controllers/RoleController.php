@@ -42,6 +42,7 @@ class RoleController extends Controller
     {
         $role = new Role;
         $role->role_name = $request->role_name;
+        $role->description = $request->description;
         $result = $role->save();
 
         if($result)
@@ -86,6 +87,7 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
         $role->role_name = $request->role_name;
+        $role->description = $request->description;
         $result = $role->save();
 
         if($result)

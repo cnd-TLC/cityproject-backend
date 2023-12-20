@@ -15,7 +15,7 @@ class AccountsManagementController extends Controller
      */
     public function index()
     {
-        return User::all();
+        return User::select('users.*', 'departments.department_name as department_name', 'roles.role_name as role_name')->join('departments', 'users.department_no', '=', 'departments.id')->join('roles', 'users.role_id', '=', 'roles.id')->get();
     }
 
     public function specificUser($id=null)
@@ -46,8 +46,9 @@ class AccountsManagementController extends Controller
         $user->email = $request->email;
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
-        $user->department_no = $request->department_no;
-        $user->role_id = $request->role_id;
+        $user->department_no = $request->selectedDepartment;
+        $user->role_id = $request->selectedRole;
+        $user->status = $request->selectedStatus;
         $result = $user->save();
 
         if($result)
