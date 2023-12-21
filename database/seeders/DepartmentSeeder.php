@@ -20,27 +20,27 @@ class DepartmentSeeder extends Seeder
     public function run()
     {
         Department::create([
-            'department_name' => 'mayor\'s office',
+            'department_name' => 'Mayor\'s Office',
         ]);
 
         Department::create([
-            'department_name' => 'treasury',
+            'department_name' => 'Treasury',
         ]);
 
         Department::create([
-            'department_name' => 'bac',
+            'department_name' => 'BAC',
         ]);
 
         Department::create([
-            'department_name' => 'budget',
+            'department_name' => 'Budget',
         ]);
 
         Department::create([
-            'department_name' => 'accounting',
+            'department_name' => 'Accounting',
         ]);
 
         Department::create([
-            'department_name' => 'cgso',
+            'department_name' => 'CGSO',
         ]);
     }
 }
